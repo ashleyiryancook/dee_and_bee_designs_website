@@ -1,7 +1,10 @@
 {
   "title": "Cascadia Tote",
   "category": "tote",
-  "description": "A structured everyday tote in warm cognac leather with hand-painted floral details along the base. Spacious interior with custom linen lining, brass hardware, and a detachable coin purse.",
-  "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80",
-  "tags": ["everyday", "floral", "hand-painted"]
+  "description": "A structured everyday tote in warm burgundy leather with hand-painted floral details. Spacious interior with custom lining, brass hardware, and a detachable coin purse.",
+  "image": "/images/portfolio/product-image-apr-13-2026-screenshot-edited.png",
+  "tags": [
+    "leather",
+    "Floral"
+  ]
 }
