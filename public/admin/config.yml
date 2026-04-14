@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/portfolio"
+public_folder: "/images/portfolio"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    label_singular: "Bag"
+    folder: "src/data/portfolio"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    fields:
+      - label: "Bag Name"
+        name: "title"
+        widget: "string"
+        hint: "The name of this piece, e.g. Midnight Azure Clutch"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        hint: "Choose the type of bag — this controls which filter it appears under on the portfolio page"
+        options:
+          - { label: "Backpack", value: "backpack" }
+          - { label: "Clutch", value: "clutch" }
+          - { label: "Crossbody", value: "crossbody" }
+          - { label: "Tote", value: "tote" }
+          - { label: "Wallet", value: "wallet" }
+          - { label: "Shoulder Bag", value: "shoulder-bag" }
+          - { label: "Mini Bag", value: "mini-bag" }
+          - { label: "Other", value: "other" }
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "Describe the materials, craftsmanship, and any special details"
+
+      - label: "Photo"
+        name: "image"
+        widget: "image"
+        hint: "Upload a photo of the bag — JPG or PNG recommended"
+        required: false
+
+      - label: "Additional Tags"
+        name: "tags"
+        widget: "list"
+        hint: "Optional extra keywords like: leather, evening, hand-painted"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"

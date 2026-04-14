@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Midnight Azure Clutch",
+    "description": "A sleek evening clutch crafted from Italian navy leather with hand-stitched silver accents. Features a magnetic closure and interior card slots. Perfect for formal evenings and special occasions.",
+    "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80",
+    "tags": ["clutch", "evening", "leather"]
+  },
+  {
+    "id": "2",
+    "title": "Cascadia Tote",
+    "description": "A structured everyday tote in warm cognac leather with hand-painted floral details along the base. Spacious interior with custom linen lining, brass hardware, and a detachable coin purse.",
+    "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80",
+    "tags": ["tote", "everyday", "floral"]
+  },
+  {
+    "id": "3",
+    "title": "Celestine Crossbody",
+    "description": "A compact crossbody in deep burgundy suede with laser-cut geometric overlay. Adjustable chain strap, zip closure, and an interior pocket with custom monogram option available.",
+    "image": "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800&q=80",
+    "tags": ["crossbody", "suede", "geometric"]
+  }
+]

@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+:root {
+  /* Color palette */
+  --bg-deep:       #05051a;
+  --bg-card:       rgba(8, 8, 40, 0.85);
+  --bg-card-hover: rgba(0, 184, 255, 0.06);
+
+  --cyan:          #00fff9;
+  --blue:          #00b8ff;
+  --violet:        #4900ff;
+  --purple:        #9600ff;
+  --pink:          #ff00c1;
+
+  --text-primary:  #f0e8ff;
+  --text-muted:    rgba(240, 232, 255, 0.6);
+  --text-dim:      rgba(240, 232, 255, 0.35);
+
+  --border-blue:   rgba(0, 184, 255, 0.3);
+  --border-cyan:   rgba(0, 255, 249, 0.2);
+  --glow-blue:     0 0 20px rgba(0, 184, 255, 0.4);
+  --glow-cyan:     0 0 30px rgba(0, 255, 249, 0.3);
+  --glow-pink:     0 0 20px rgba(255, 0, 193, 0.5);
+
+  /* Typography */
+  --font-display: 'Pinyon Script', cursive;
+  --font-body:    'Cormorant Garamond', Georgia, serif;
+
+  /* Spacing */
+  --nav-height: 72px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Starfield background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(73, 0, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 184, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(150, 0, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography base */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.neon-text-blue {
+  color: var(--blue);
+  text-shadow: 0 0 20px rgba(0, 184, 255, 0.6);
+}
+
+.neon-text-cyan {
+  color: var(--cyan);
+  text-shadow: 0 0 20px rgba(0, 255, 249, 0.6);
+}
+
+.neon-text-pink {
+  color: var(--pink);
+  text-shadow: 0 0 20px rgba(255, 0, 193, 0.7);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 184, 255, 0.1), rgba(0, 255, 249, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: var(--glow-blue), inset 0 0 20px rgba(0, 184, 255, 0.1);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+  box-shadow: var(--glow-pink);
+}
+
+.btn-pink {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+  box-shadow: var(--glow-pink);
+  background: rgba(255, 0, 193, 0.08);
+}
+
+/* Divider */
+.neon-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), var(--cyan), var(--blue), transparent);
+  opacity: 0.4;
+  margin: 3rem 0;
+}
+
+/* Card */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-blue);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 184, 255, 0.5);
+  box-shadow: var(--glow-blue);
+  background: var(--bg-card-hover);
+}
+
+/* Section spacing */
+.section {
+  padding: 5rem 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue); }
