@@ -10,6 +10,24 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
+    <!--
+      Hidden form for Netlify Forms detection.
+      The React form at /custom-order is rendered at runtime, so Netlify's
+      build-time HTML scanner can't see it. This static copy registers the
+      form and its field names so submissions are accepted in production.
+      Must stay in sync with the form in src/pages/CustomOrder.jsx.
+    -->
+    <form name="custom-order" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="budget" />
+      <input type="text" name="timeline" />
+      <textarea name="inspiration"></textarea>
+      <input type="text" name="source" />
+      <input type="file" name="photo" />
+      <input type="text" name="bot-field" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
