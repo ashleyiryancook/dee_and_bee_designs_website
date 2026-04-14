@@ -213,6 +213,23 @@ function PortfolioCard({ item, onOpen }) {
           display: '-webkit-box', WebkitLineClamp: 2,
           WebkitBoxOrient: 'vertical', overflow: 'hidden',
         }}>{item.description}</p>
+        {item.for_sale && (
+          <div style={{
+            marginTop: '1rem', display: 'flex', alignItems: 'center',
+            justifyContent: 'space-between', gap: '0.75rem',
+          }}>
+            <span style={{
+              fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase',
+              color: 'var(--cyan)', border: '1px solid rgba(0,255,249,0.4)',
+              padding: '0.25rem 0.6rem', textShadow: '0 0 8px rgba(0,255,249,0.4)',
+            }}>Available</span>
+            {typeof item.price === 'number' && (
+              <span style={{
+                fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--pink)',
+              }}>${item.price.toLocaleString()}</span>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )
@@ -269,6 +286,25 @@ function Lightbox({ item, onClose }) {
           }}>{item.title}</h2>
           <div style={{ width: '60px', height: '1px', background: 'linear-gradient(90deg, var(--blue), transparent)' }} />
           <p style={{ color: 'var(--text-muted)', lineHeight: 1.9, fontSize: '1.05rem' }}>{item.description}</p>
+          {item.for_sale && (
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '1rem',
+              padding: '0.85rem 1rem', marginTop: '0.25rem',
+              border: '1px solid rgba(0,255,249,0.35)',
+              background: 'rgba(0,255,249,0.05)',
+            }}>
+              <span style={{
+                fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase',
+                color: 'var(--cyan)', textShadow: '0 0 8px rgba(0,255,249,0.4)',
+              }}>Available for Purchase</span>
+              {typeof item.price === 'number' && (
+                <span style={{
+                  marginLeft: 'auto', fontFamily: 'var(--font-display)',
+                  fontSize: '1.4rem', color: 'var(--pink)',
+                }}>${item.price.toLocaleString()}</span>
+              )}
+            </div>
+          )}
           {item.tags && item.tags.length > 0 && (
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
               {item.tags.map(tag => (

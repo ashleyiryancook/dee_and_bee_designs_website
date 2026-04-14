@@ -47,6 +47,22 @@ collections:
         hint: "Upload a photo of the bag — JPG or PNG recommended"
         required: false
 
+      - label: "Available for Purchase"
+        name: "for_sale"
+        widget: "boolean"
+        hint: "Toggle on to mark this piece as available to buy"
+        default: false
+        required: false
+
+      - label: "Price (USD)"
+        name: "price"
+        widget: "number"
+        hint: "Price in US dollars — only shown when 'Available for Purchase' is on"
+        required: false
+        value_type: "float"
+        min: 0
+        step: 1
+
       - label: "Additional Tags"
         name: "tags"
         widget: "list"
